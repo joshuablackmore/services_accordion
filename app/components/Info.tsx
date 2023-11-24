@@ -13,7 +13,7 @@ export type accordion = {
 //   data: accordion[];
 // };
 
-const getAccordions = async (): Promise<accordion> => {
+const getAccordions = async (): Promise<accordion[]> => {
   const res = await fetch("http://localhost:3000/api/data");
 
   if (!res.ok) {
@@ -25,6 +25,7 @@ const getAccordions = async (): Promise<accordion> => {
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
   const response = await getAccordions();
+  console.log(response);
 
   return (
     <div className=" min-h-[1048px] bg-[#171717] p-[20px] pt-[100px] md:px-10 2xl:px-[60px] 2xl:pt-[138px]">
