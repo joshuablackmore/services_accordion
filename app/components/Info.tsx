@@ -25,19 +25,19 @@ const getAccordions = async (): Promise<accordion> => {
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
   const response = await getAccordions();
-  console.log(response);
 
   return (
-    <div className=" bg-[#171717] min-h-[1048px]">
-      <div className="flex pt-[100px] pl-[20px]">
-        <h2 className="text-[#E0E0E0] font-bold italic text-2xl mb-[39px]">
+    <div className=" min-h-[1048px] bg-[#171717] p-[20px] pt-[100px] md:px-10 2xl:px-[60px] 2xl:pt-[138px]">
+      <div className="flex flex-col   ">
+        <h2 className="mb-[39px] text-2xl font-bold italic text-[#E0E0E0] 2xl:text-4xl 2xl:leading-9 ">
           INFO
         </h2>
+        <Divider className="h-[1px] min-w-[335px] bg-white opacity-50" />
       </div>
-      <Divider className="bg-white h-[1px] max-w-[335px] mx-5" />
+
       {response.map((accordions: accordion) => {
         return (
-          <div key={accordions.id}>
+          <div key={accordions.id} className="">
             <DropDown
               title={accordions.title}
               image={accordions.image}
