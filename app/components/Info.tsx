@@ -9,11 +9,7 @@ export type accordion = {
   text: string;
 };
 
-// type accordionResponse = {
-//   data: accordion[];
-// };
-
-const getAccordions = async (): Promise<accordion> => {
+const getAccordions = async (): Promise<accordion[]> => {
   const res = await fetch("http://localhost:3000/api/data");
 
   if (!res.ok) {
@@ -25,6 +21,7 @@ const getAccordions = async (): Promise<accordion> => {
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
   const response = await getAccordions();
+  console.log(response);
 
   return (
     <div className=" min-h-[1048px] bg-[#171717] p-[20px] pt-[100px] md:px-10 2xl:px-[60px] 2xl:pt-[138px]">
@@ -34,19 +31,20 @@ const Info: React.FC = async (): Promise<JSX.Element> => {
         </h2>
         <Divider className="h-[1px] min-w-[335px] bg-white opacity-50" />
       </div>
-
-      {response.map((accordions: accordion) => {
-        return (
-          <div key={accordions.id} className="">
-            <DropDown
-              title={accordions.title}
-              image={accordions.image}
-              text={accordions.text}
-              id={accordions.id}
-            />
-          </div>
-        );
-      })}
+      <div>
+        {response.map((accordions) => {
+          return (
+            <div key={accordions.id} className="">
+              <DropDown
+                title={accordions.title}
+                image={accordions.image}
+                text={accordions.text}
+                id={accordions.id}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
