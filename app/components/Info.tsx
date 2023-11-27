@@ -31,19 +31,20 @@ const Info: React.FC = async (): Promise<JSX.Element> => {
         </h2>
         <Divider className="h-[1px] min-w-[335px] bg-white opacity-50" />
       </div>
-
-      {response.map((accordions) => {
-        return (
-          <div key={accordions.id} className="">
-            <DropDown
-              title={accordions.title}
-              image={accordions.image}
-              text={accordions.text}
-              id={accordions.id}
-            />
-          </div>
-        );
-      })}
+      <div>
+        {response.map((accordions) => {
+          return (
+            <div key={accordions.id} className="">
+              <DropDown
+                title={accordions.title}
+                image={accordions.image}
+                text={accordions.text}
+                id={accordions.id}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
