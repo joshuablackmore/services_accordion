@@ -21,9 +21,6 @@ const getAccordions = async (): Promise<accordion[]> => {
 };
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
-  if (!BASE_API_URL) {
-    console.log("don't worry!!!");
-  }
   const response = await getAccordions();
 
   return (
