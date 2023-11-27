@@ -10,7 +10,7 @@ export type accordion = {
 };
 
 const getAccordions = async (): Promise<accordion[]> => {
-  const res = await fetch("http://localhost:3000/api/data");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/data`);
 
   if (!res.ok) {
     throw new Error("failed to collect data");
