@@ -9,10 +9,6 @@ export type accordion = {
   text: string;
 };
 
-// type accordionResponse = {
-//   data: accordion[];
-// };
-
 const getAccordions = async (): Promise<accordion[]> => {
   const res = await fetch("http://localhost:3000/api/data");
 
@@ -36,7 +32,7 @@ const Info: React.FC = async (): Promise<JSX.Element> => {
         <Divider className="h-[1px] min-w-[335px] bg-white opacity-50" />
       </div>
 
-      {response.map((accordions: accordion) => {
+      {response.map((accordions) => {
         return (
           <div key={accordions.id} className="">
             <DropDown
