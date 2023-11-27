@@ -1,6 +1,7 @@
 import React from "react";
 import DropDown from "./info-components/DropDown";
 import { Divider } from "@mui/material";
+import { BASE_API_URL } from "../../utils/constants";
 
 export type accordion = {
   id: number;
@@ -10,7 +11,7 @@ export type accordion = {
 };
 
 const getAccordions = async (): Promise<accordion[]> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/data`);
+  const res = await fetch(`${BASE_API_URL}/api/data`);
 
   if (!res.ok) {
     throw new Error("failed to collect data");
@@ -20,6 +21,9 @@ const getAccordions = async (): Promise<accordion[]> => {
 };
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
+  if (!BASE_API_URL) {
+    console.log("don't worry!!!");
+  }
   const response = await getAccordions();
 
   return (
