@@ -11,9 +11,7 @@ export type accordion = {
 };
 
 const getAccordions = async (): Promise<accordion[]> => {
-  const res = await fetch(`${BASE_API_URL}/api/data`, {
-    next: { revalidate: 30 },
-  });
+  const res = await fetch(`${BASE_API_URL}/api/data`, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("failed to collect data");
