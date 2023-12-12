@@ -3,9 +3,8 @@ import React from "react";
 import { Disclosure, Transition } from "@headlessui/react";
 import Divider from "@mui/material/Divider";
 import { accordion } from "../Info";
-import Image from "next/image";
 
-const DropDown: React.FC<accordion> = ({ text, image, title, id, _id }) => {
+const DropDown: React.FC<accordion> = ({ text, image, title, _id }) => {
   return (
     <div className="">
       <Disclosure>

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export interface Accordions extends mongoose.Document {
-  _id: number;
+  _id: string;
   id: number;
   title: string;
   image: string;

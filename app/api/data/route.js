@@ -9,6 +9,7 @@ export async function GET() {
     // console.log(data);
     return NextResponse.json(data);
   } catch (error) {
-    return new NextResponse("data not collected", error);
+    console.log("error", error);
+    return new NextResponse("Error");
   }
 }
