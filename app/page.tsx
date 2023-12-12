@@ -6,5 +6,9 @@ export default function Home() {
   if (!BASE_API_URL) {
     return null;
   }
-  return <Info />;
+  return (
+    <>
+      <Info />
+    </>
+  );
 }

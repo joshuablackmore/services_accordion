@@ -3,6 +3,7 @@ import React from "react";
 import { Disclosure, Transition } from "@headlessui/react";
 import Divider from "@mui/material/Divider";
 import { accordion } from "../Info";
+import Image from "next/image";
 
 const DropDown: React.FC<accordion> = ({ text, image, title, id }) => {
   return (
@@ -52,7 +53,7 @@ const DropDown: React.FC<accordion> = ({ text, image, title, id }) => {
             >
               <Disclosure.Panel className=" ml-[86px] flex flex-col justify-end pb-5 md:ml-[304px] 2xl:ml-[730px]">
                 <div className="flex h-full flex-col items-end gap-[15px]">
-                  <div className="flex h-[50%] w-full flex-col items-end ">
+                  <div className="flex h-[50%] w-full flex-col items-end overflow-hidden">
                     <img
                       src={image}
                       className=" overflow-hidden object-cover"
