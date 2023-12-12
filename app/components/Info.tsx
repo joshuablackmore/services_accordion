@@ -4,6 +4,7 @@ import { Divider } from "@mui/material";
 import { BASE_API_URL } from "../../utils/constants";
 
 export type accordion = {
+  _id: number;
   id: number;
   title: string;
   image: string;
@@ -12,7 +13,7 @@ export type accordion = {
 
 const getAccordions = async (): Promise<accordion[]> => {
   const res = await fetch(`${BASE_API_URL}/api/data`);
-  // console.log(res);
+
   if (!res.ok) {
     throw new Error("failed to collect data");
   } else {
@@ -22,7 +23,7 @@ const getAccordions = async (): Promise<accordion[]> => {
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
   const response = await getAccordions();
-
+  console.log(response);
   return (
     <div className=" min-h-[1048px] bg-[#171717] p-[20px] pt-[100px] md:px-10 2xl:px-[60px] 2xl:pt-[138px]">
       <div className="flex flex-col   ">
@@ -40,6 +41,7 @@ const Info: React.FC = async (): Promise<JSX.Element> => {
                 image={accordions.image}
                 text={accordions.text}
                 id={accordions.id}
+                _id={accordions._id}
               />
             </div>
           );
