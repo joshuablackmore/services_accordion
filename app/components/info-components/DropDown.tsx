@@ -5,7 +5,7 @@ import Divider from "@mui/material/Divider";
 import { accordion } from "../Info";
 import Image from "next/image";
 
-const DropDown: React.FC<accordion> = ({ text, image, title, id }) => {
+const DropDown: React.FC<accordion> = ({ text, image, title, id, _id }) => {
   return (
     <div className="">
       <Disclosure>
