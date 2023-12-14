@@ -11,7 +11,7 @@ export type accordion = {
 };
 
 const getAccordions = async (): Promise<accordion[]> => {
-  const res = await fetch(`${BASE_API_URL}/api/data`);
+  const res = await fetch(`${BASE_API_URL}/api/connectTest`);
   // console.log(res);
   if (!res.ok) {
     throw new Error("failed to collect data");
@@ -22,7 +22,7 @@ const getAccordions = async (): Promise<accordion[]> => {
 
 const Info: React.FC = async (): Promise<JSX.Element> => {
   const response = await getAccordions();
-  // console.log(response);
+  console.log(response);
   return (
     <div className=" min-h-[1048px] bg-[#171717] p-[20px] pt-[100px] md:px-10 2xl:px-[60px] 2xl:pt-[138px]">
       <div className="flex flex-col   ">

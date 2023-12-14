@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import dbConnect from "../lib/db";
+import { newDbConnect } from "@/app/api/lib/newDb";
 import accordions from "@/app/models/accordions";
 
 export async function GET() {
   try {
-    await dbConnect();
+    await newDbConnect();
     const data = await accordions.find();
     // console.log(data);
     return NextResponse.json(data);
