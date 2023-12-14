@@ -10,6 +10,6 @@ export async function GET() {
     return NextResponse.json(data);
   } catch (error) {
     console.log("error", error);
-    return new NextResponse("Error");
+    return NextResponse.json("Error");
   }
 }

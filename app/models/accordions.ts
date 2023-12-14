@@ -2,14 +2,13 @@ import mongoose from "mongoose";
 
 export interface Accordions extends mongoose.Document {
   _id: string;
-  id: number;
   title: string;
   image: string;
   text: string;
 }
 
 const accordionsSchema = new mongoose.Schema({
-  id: {
+  _id: {
     type: Number,
   },
   title: {
