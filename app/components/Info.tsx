@@ -14,7 +14,7 @@ const getAccordions = async (): Promise<accordion[]> => {
   const res = await fetch(`${BASE_API_URL}/api/connectTest`);
   // console.log(res);
   if (!res.ok) {
-    throw new Error("failed to collect data");
+    throw new Error("failed to collect data - this messag coming up ?");
   } else {
     return res.json();
   }
