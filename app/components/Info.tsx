@@ -1,7 +1,6 @@
 import React from "react";
 import DropDown from "./info-components/DropDown";
 import { Divider } from "@mui/material";
-import { BASE_API_URL } from "../../utils/constants";
 
 export type accordion = {
   _id: string;
@@ -9,6 +8,8 @@ export type accordion = {
   image: string;
   text: string;
 };
+
+const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 
 const getAccordions = async (): Promise<accordion[]> => {
   const res = await fetch(`${BASE_API_URL}/api/connectTest`);
