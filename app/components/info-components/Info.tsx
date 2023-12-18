@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import DropDown from "./DropDown";
 import { Divider } from "@mui/material";
