@@ -1,9 +1,8 @@
 import React from "react";
-import Info from "./components/Info";
-import { BASE_API_URL } from "@/utils/constants";
+import Info from "./components/info-components/Info";
 
 export default function Home() {
-  if (!BASE_API_URL) {
+  if (!process.env.NEXT_PUBLIC_BASE_API_URL) {
     return null;
   }
   return (
