@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import DropDown from "./DropDown";
 import { Divider } from "@mui/material";
 
@@ -12,7 +12,9 @@ export type accordion = {
 const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL;
 
 const getAccordions = async (): Promise<accordion[]> => {
-  const res = await fetch(`${BASE_API_URL}/api/connectTest`);
+  const res = await fetch(`${BASE_API_URL}/api/connectTest`, {
+    cache: "no-store",
+  });
   // console.log(res);
   if (!res.ok) {
     throw new Error("failed to collect data");
