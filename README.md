@@ -2,3 +2,4 @@ A services accordion component built out from a Figma design from dev buddy, Tom
 
 ## TODO
 - Add animation to the accordion icons
+- Learn Git
